@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT FALCO 1</title>
+
+<style>
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:black;
+    color:white;
+}
+
+/* ================= ORANGE DIVIDER ================= */
+
+.section{
+    min-height:100vh;
+    padding:100px 20px 40px 20px;
+    box-sizing:border-box;
+    border-bottom:4px solid #ff4800;   /* ORANGE LINE */
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:60px;
+    background:black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav-buttons{
+    display:flex;
+    gap:25px;
+    border-color: #ff4800;
+}
+
+.nav-buttons button{
+    background:transparent;
+    padding: 10px 15px;
+    border: 0.5px solid #ff4800; 
+    border-radius: 5px;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s ease;
+}
+
+.nav-buttons button:hover{
+    background:#ff4800;
+    color: black;
+}
+
+/* ================= FIRST SLIDE ================= */
+
+.first-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.text-block h1{
+    font-size:3rem;
+    margin:0;
+    color: #ff4800;
+}
+
+.text-block p{
+    font-size:1rem;
+    font-style:italic;
+    margin-bottom:0px;
+}
+
+.text-block h2{
+    font-size:1.5rem;
+    margin-top:50px;
+    color: #ff4800;
+
+}
+
+.profile-img{
+    width:350px;
+    height:450px;
+    background:url("image/rahul.jpeg") center/cover no-repeat;
+    border-radius:20px;
+    justify-self: center;
+    margin-left: 40px;  
+    margin-top: -10px;
+    box-shadow:0 0 25px rgba(255,72,0,0.4);
+    transition:0.4s ease;
+}
+
+.profile-img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 40px rgba(255,72,0,0.7);
+}
+
+/* ================= SECOND SLIDE ================= */
+
+.second-slide{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;  /* TEXT AT TOP */
+    padding-top:55px;
+}
+
+.second-slide h1{
+    margin-top:0;
+    font-size:2.5rem;
+}
+
+.skills-container{
+    width:100%;
+    max-width:1100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:40px;
+    margin-top:30px;
+}
+
+.skill-box{
+    background:#111;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(255,72,0,0.2);
+    transition:0.3s ease;
+}
+
+.skill-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(255,72,0,0.6);
+}
+
+.skill-box h2{
+    color:#ff4800;
+    margin-bottom:20px;
+}
+
+.skill{
+    margin-bottom:20px;
+}
+
+.skill span{
+    font-size:14px;
+}
+
+.progress{
+    width:100%;
+    height:8px;
+    background:#333;
+    border-radius:10px;
+    margin-top:5px;
+    overflow:hidden;
+}
+
+.progress div{
+    height:100%;
+    background:#ff4800;
+    border-radius:10px;
+    transition:width 1s ease-in-out;
+}
+
+
+/* ================= THIRD SLIDE ================= */
+
+.third-slide{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;  /* TEXT AT TOP */
+    padding-top:55px;
+}
+
+.third-slide h1{
+    margin-top:0;
+    font-size:2.5rem;
+}
+
+/* ================= FOURTH SLIDE ================= */
+
+.fourth-slide{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:60px;
+}
+
+.fourth-slide h1{
+    margin-bottom:100px;
+}
+
+.projects-grid{
+    width:100%;
+    max-width:1000px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:30px;
+}
+
+.projects-grid a{
+    height:150px;
+    border-radius:20px;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+    transition:transform 0.3s ease;
+}
+
+.projects-grid a:hover{
+    transform:scale(1.08);
+}
+
+/* Keep your images */
+
+.btn21{ background-image:url("image/mart.png"); }
+.btn22{ background-image:url(""); }
+.btn23{ background-image:url("image/food.png"); }
+.btn24{ background-image:url(""); }
+.btn25{ background-image:url(""); }
+.btn26{ background-image:url(""); }
+.btn27{ background-image:url(""); }
+.btn28{ background-image:url(""); }
+
+/* ================= FIFTH SLIDE ================= */
+
+.fifth-slide{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;  /* TEXT AT TOP */
+    padding-top:55px;
+}
+
+.fifth-slide h1{
+    margin-top:0;
+    font-size:2.5rem;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .first-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .text-block{
+        text-align:center;
+    }
+
+    .profile-img{
+        width:250px;
+        height:320px;
+        margin:auto;
+    }
+
+    .nav-buttons{
+        gap:10px;
+    }
+
+    .nav-buttons button{
+        font-size:14px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+
+    <div class="nav-buttons">
+        <button onclick="location.href='#first'">Home</button>
+        <button onclick="location.href='#second'">Skills</button>
+        <button onclick="location.href='#third'">Achivement</button>
+        <button onclick="location.href='#fourth'">Projects</button>
+        <button onclick="location.href='#fifth'">About</button>
+    </div>
+
+</div>
+
+<!-- ================= FIRST SECTION ================= -->
+
+<div id="first" class="section">
+
+    <div class="first-content">
+
+        <div class="text-block">
+            <h1>AI/ML ENGINEER</h1>
+            <p>AI/ML Engineer with hands-on experience in 
+                building machine learning models, developing 
+                AI-powered applications, and deploying scalable 
+                solutions using Python and deep learning frameworks. 
+                Passionate about solving real-world problems
+                using data-driven approaches.
+            </p>
+
+            <h2>RAHUL THATOI</h2>
+            <p>AI & MACHINE LEARNING ENGINEER.<br>
+            📞 +91-8114806398 | ✉ rahulthatoi519@email.com<br>
+            AI Engineer | Designer | Developer</p>
+        </div>
+
+        <div class="profile-img"></div>
+
+    </div>
+
+</div>
+
+<!-- ================= SECOND SECTION ================= -->
+
+<div id="second" class="section second-slide">
+    <h1>MY SKILLS</h1>
+
+    <div class="skills-container">
+
+        <!-- Programming -->
+        <div class="skill-box">
+            <h2>Programming</h2>
+
+            <div class="skill">
+                <span>Python</span>
+                <div class="progress"><div style="width:90%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>java</span>
+                <div class="progress"><div style="width:75%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>c/c++</span>
+                <div class="progress"><div style="width:75%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>SQL</span>
+                <div class="progress"><div style="width:80%"></div></div>
+            </div>
+        </div>
+
+        <!-- AI / ML -->
+        <div class="skill-box">
+            <h2>AI / ML</h2>
+
+            <div class="skill">
+                <span>Machine Learning</span>
+                <div class="progress"><div style="width:85%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Deep Learning</span>
+                <div class="progress"><div style="width:80%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Gen AI</span>
+                <div class="progress"><div style="width:80%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Computer Vision</span>
+                <div class="progress"><div style="width:75%"></div></div>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-box">
+            <h2>Tools & Frameworks</h2>
+
+            <div class="skill">
+                <span>TensorFlow / PyTorch</span>
+                <div class="progress"><div style="width:80%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Scikit-learn</span>
+                <div class="progress"><div style="width:85%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Matplotlib</span>
+                <div class="progress"><div style="width:85%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Git & GitHub</span>
+                <div class="progress"><div style="width:90%"></div></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ================= THIRD SECTION ================= -->
+
+<div id="third" class="section third-slide">
+    <h1>ACHIVEMENT</h1>
+</div>
+
+<!-- ================= FOURTH SECTION ================= -->
+
+<div id="fourth" class="section fourth-slide">
+
+    <h1>MY PROJECTS</h1>
+
+    <div class="projects-grid">
+        <a href="falco1.html" class="btn21"></a>
+        <a href="id-card.html" class="btn22"></a>
+        <a href="food.html" class="btn23"></a>
+        <a href="#" class="btn24"></a>
+        <a href="#" class="btn25"></a>
+        <a href="#" class="btn26"></a>
+        <a href="#" class="btn27"></a>
+        <a href="#" class="btn28"></a>
+    </div>
+
+</div>
+
+<!-- ================= FIFTH SECTION ================= -->
+
+<div id="fifth" class="section fifth-slide">
+    <h1>ABOUT</h1>
+</div>
+
+</body>
+</html>
