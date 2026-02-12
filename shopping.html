@@ -1,0 +1,263 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta charset="viewport" content="width = device-width , initial-scale=1.0">
+    <title>online store page </title>
+    <style>
+
+        .body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0px;
+            margin: 0px;
+            background-color: aliceblue;
+            height: 100vh;
+
+        }
+
+        .top-bar {
+
+            left: 0%;
+            top: 0%;
+            width: 100%;
+            height: 50px;
+            margin-top: 0px;
+            align-items: center;
+            position: fixed;
+            display: flex;
+            background-color: aqua;
+            color: black;
+            font-size: 50px;
+            font-weight: bolder;
+            justify-content: center;
+            padding: 0px 0px;
+            z-index: 1000;
+
+        }
+               
+           /* menu icon */
+         .menu-icon {
+
+            width: 20px;
+            height: 20px;
+            left: 15px;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            cursor: pointer;
+
+        }
+
+        .menu-icon div {
+
+            width: 100%;
+            height: 4px;
+            background-color: black;
+
+        }
+     
+
+     /* login button */
+        .btn1 {
+
+            position: absolute;
+            width: 30px;
+            height: 28px;
+            right: 20px;
+            bottom: 5px;
+            border-radius: 70px;
+            box-shadow: #0d0c22;
+            font-style: normal;
+            cursor: pointer;
+            box-shadow: 0 0 2px #000000, 0 0 0 2px #020101eb;
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGxex6IB77c2H7crtcFCRR9agq0vqskhKA0g&s) no-repeat center center/cover ;
+        }
+
+        .btn1:hover {
+            background-color: #00edf5;
+           
+          }
+
+           /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 200px;
+            height: 400px;
+            z-index: 1001;
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+
+        .dropdown button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        .dropdown button:hover {
+            background-color: #ddd;
+        }
+    
+          .main {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+          }
+      
+          .group {
+            display: flex;
+            align-items: center;
+            width: 500px;
+          }
+      
+          .input {
+            height: 40px;
+            width: 100%;
+            padding-left: 2.5rem;
+            border-radius: 8px;
+            background-color: #d9e8d8;
+            border: 2px solid transparent;
+            box-shadow: 0 0 2px #C1D9BF, 0 0 0 2px #020101eb;
+            outline: none;
+            z-index: 1000;
+          }
+      
+          .input::placeholder {
+            color: #777;
+            z-index: 1000;
+          }
+
+          .main1 {
+            margin-top: 110px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+          }
+      
+          .slider {
+            width: 1370px;
+            height: 355px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: fixed;
+          }
+      
+          .slides {
+            display: flex;
+            width: 500%; /* 5 images = 500% */
+            transition: transform 1s ease-in-out;
+          }
+      
+          .slides img {
+            width: 1370px;
+            height: 355px;
+          }
+      
+
+        .footer {
+
+            width: 100%;
+            padding: 10px 0;
+            bottom: 0px;
+            position: fixed;
+            background-color: rgb(248, 225, 196);
+            text-align: center;
+
+        }
+
+        
+    </style>
+    </head>
+
+    <body>
+        <div class="top-bar">
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+            <span><h5>RAHUL MART </h5></span>
+
+            <button class="btn1" id="loginButton"></button>
+
+            <div class="dropdown" id="loginDropdown">
+            <button class="sign-in">Sign In</button>
+            <button class="sign-up">Sign Up</button>
+            <button class="forgot">Forgot Password?</button>
+            </div>
+
+        </div>
+        </div>
+            <div class="main">
+            <div class="group">
+                <input type="text" class="input" placeholder="Search...">
+            </div>
+            </div>
+       
+        <div class="footer">
+            <h2> THANK YOU FOR VISIT US . </h2>
+            <p> RAHUL MART pvt. ltd. <br>
+            Company Site : O P Jindal University,Raigarh<br>
+            Place : Raigarh,Chattishgarh,India <br>
+            Email id : rahulthatoi258@gmail.com<br>
+            Cont no. : 8114806398 <br>
+            THANK YOU </p>
+        </div>
+        <div class="main1">
+        <div class="slider">
+            <div class="slides" id="slideContainer">
+              <img src=https://i.pinimg.com/736x/b6/89/96/b68996b0aeb13339740f961ada455a77.jpg alt="1">
+              <img src=https://i.pinimg.com/736x/4b/81/df/4b81dfd38d4926fd0a822854ff8ea182.jpg alt="2">
+              <img src=https://images.vexels.com/media/users/3/196481/raw/180e3280e0efdd4f24ac7e27688d1374-mega-sale-online-slider-template.jpg alt="3">
+              <img src=https://i.pinimg.com/736x/b6/89/96/b68996b0aeb13339740f961ada455a77.jpg alt="4">
+              <img src= https://www.shutterstock.com/image-vector/online-shopping-concept-presentation-slide-260nw-2056215143.jpg alt="5">
+            </div>
+          </div>
+        </div>
+          
+          <script>
+            
+             // Handle Dropdown Toggle
+        const loginButton = document.getElementById('loginButton');
+        const loginDropdown = document.getElementById('loginDropdown');
+
+        // Toggle the dropdown menu when the button is clicked
+        loginButton.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent event from propagating
+            loginDropdown.classList.toggle('show'); // Toggle the 'show' class to display or hide the dropdown
+        });
+
+        // Close dropdown if user clicks outside
+        window.addEventListener('click', function (e) {
+            if (!e.target.closest('.top-bar')) {
+                loginDropdown.classList.remove('show'); // Close the dropdown if clicked outside
+            }
+        });
+
+            // slider code of script 
+            const slides = document.getElementById("slideContainer");
+            const totalSlides = slides.children.length;
+            let index = 0;
+          
+            setInterval(() => {
+              index = (index + 1) % totalSlides;
+              slides.style.transform = `translateX(-${index * 1370}px)`;
+            }, 4000); // Change image every 4 seconds
+          </script>
+       
+    </body>
+</html>
